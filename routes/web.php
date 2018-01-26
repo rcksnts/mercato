@@ -22,3 +22,15 @@ Route::get('/about', function () {
 Route::get('/blog', function () {
     return view('public.blog');
 });
+
+Route::get('/contact-us', function () {
+
+});
+
+/* Admin */
+
+Route::get('/blog/create', function () {
+    return view('admin/blog_create')->with('content', '');
+});
+
+Route::post('/blog/create', 'BlogController@showPost');
