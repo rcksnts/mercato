@@ -8,6 +8,49 @@ main {
     flex: 1 0 auto;
 }
 
+/* Fonts */
+
+@font-face{
+    font-family: 'OratorStd';
+    src: url('/fonts/OratorStd.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('/fonts/AvenirRoman.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Didot';
+    src: url('/fonts/Didot.org') format('opentype');
+
+    font-weight: 300;
+}
+
+.oratorStd {
+    font-family: 'OratorStd';
+}
+
+.avenir{
+    font-family: 'Avenir';
+}
+
+.didot{
+    font-family: 'Didot';
+}
+
+.transformUpper{
+    text-transform: uppercase;
+}
+
+.vertical-text {
+    -webkit-transform:rotate(270deg);
+    -moz-transform:rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform:rotate(270deg);
+    transform: rotate(270deg);
+}
+
 /* Video Landing Page */
 
 .video-full-landing {
@@ -53,7 +96,6 @@ main {
     position: relative;
     /*top: 25%;*/
     width: 100%;
-    text-align: center;
     margin-top: 30px;
 }
 
@@ -71,10 +113,11 @@ main {
 }
 
 .overlay .closebtn-med-up {
+    font-weight: lighter;
     position: absolute;
-    bottom: 32px;
-    left: 32px;
-    font-size: 60px;
+    bottom: 0px;
+    left: 62px;
+    font-size: 64px;
 }
 
 .overlay .closebtn-small-down{

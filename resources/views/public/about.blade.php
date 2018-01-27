@@ -5,95 +5,136 @@
 @stop
 
 @section('header')
-    <style>
-        * {
-            font-family: 'OratorStd';
-            src: url({{ asset('fonts/OratorStd.otf') }})
+    <style type="text/css">
+        #nav_login {
+            color: black;
+        }
+
+        #nav_signup {
+            color: black;
         }
     </style>
 @stop
 
 @section('body')
+    @include('public.nav_fixed')
     @include('public.nav_side')
-    <h5 onclick="openNav()" style="cursor: pointer; position: fixed; bottom: 32px; left: 32px;">Menu</h5>
 
-    <div style="margin-top: 10%;"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col s12 m6">
-                <h3 class="center-align" style="position: relative; top: 10%;"><i>About Us</i></h3>
+    <p onclick="openNav()" class="oratorStd"
+       style="cursor: pointer; position: fixed; bottom: 16px; left: 110px; font-size: 18px;"><b>Menu</b></p>
 
-                <img src="{{ asset('img/about1.jpg') }}" class="img-responsive"
-                     style="width: 100%; max-height: 640px;"/>
+    <!-- Desktop View-->
+    <div class="hide-on-small-and-down">
+        <div class="row full-page" style="margin-bottom: 0; padding-left: 172.9px;">
 
-                <p style="padding-right: 5%; padding-top: 1%; font-size: 18px;">
-                    INSPIRED BY THE POPULAR ASIAN STREET FOOD SCENE, MERCATO ALSO A STARTUP DISCOVERY, INCUBATOR, AND
-                    INNOVATION CENTER OFFERING START UPS ACCESS TO FOODIES THROUGH WEEKEND MARKETS IN METRO MANILA.
+            <div style="padding-top: 10%;"></div>
+
+            <div class="row" style="margin-bottom: 0;">
+                <div class="col m6">
+                    <div class="center-align" style="max-height: 900px;">
+                        <p class="avenir"
+                           style="font-size: 44px; margin-bottom: 0; line-height: 44px; color: rgba(200,180,152,1)"><i>About
+                                Us</i></p>
+                        <p class="avenir"
+                           style="font-size: 44px; margin: 0; line-height: 44px; color: rgba(250,230, 215, 1)"><i>About
+                                Us</i></p>
+                        <p class="avenir" style="font-size: 44px; margin-top: 0; line-height: 44px; color: white"><i>About
+                                Us</i></p>
+
+                        <img src="{{ asset('img/about1.jpg') }}"
+                             style="width: 70%; position: relative; bottom: 94px; z-index: -1;"/>
+
+                        <p class="oratorStd transformUpper left-align"
+                           style="width: 60%; position: relative; left: 15%; bottom: 78px; font-size: 12px; line-height: 28px; padding-right: 48px; clear: none;">
+                            <b>
+                                Inspired by the popular asian street food scene, Mercato also a startup discovery,
+                                incubator and innovation center offering start ups access to foodies through weekend
+                                markets in metro manila.
+                            </b>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col m6">
+                    <div style="margin-top: 32px;"></div>
+
+                    <p class="oratorStd transformUpper"
+                       style="width: 60%; position: relative; right: 48px; font-size: 12px; line-height: 28px;">
+                        <b>
+                            Established in late 2010, Mercato Centrale is
+                            now the country’s premier night food market
+                            operator known for our wide array and continuous
+                            curated choices from home-based food vendors at
+                            affordable prices (versus fast food and restaurants).
+                            ‘Hang out’ place for millenials, foodies and must
+                            visit destinations for tourists/balikbayans.
+                        </b>
+                    </p>
+
+                    <p class="avenir"
+                       style="width: 70%; position: relative; color: rgba(188,161,191,1); font-size: 32px; line-height: 44px;">
+                        <i>The biggest night food market in the Philippines which incubates new and unique food
+                            concepts.
+                        </i>
+                    </p>
+
+                    <div style="padding-top: 20px;"></div>
+
+                    <img src="{{ asset('img/about2.jpg') }}"
+                         style="width: 85%; position: relative; right: 180px; height: 380px; clear: none;"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="padding-left: 172.9px;">
+            <div class="col s12">
+                <p class="avenir center-align"
+                   style="font-size: 40px; line-height: 40px; color: rgba(140,27,55,1); padding-right: 86.45px;">
+                    <i>Mercato has incubated<br>many successful food businesses.</i>
                 </p>
             </div>
 
-            <div class="col s12 m6">
-                <p>ESTABLISHED IN LATE 2010. MERCATO CENTRALE IS NOW THE COUNTRY'S PREMIER NIGHT FOOD
-                    MARKET
-                    OPERATOR KNOWN FOR OUR WIDE ARRAY AND CONTINUOUS CURATED CHOICES FROM HOME-BASED FOOD VENDORS AT
-                    AFFORDABLE
-                    PRICES (VERSUS FAST FOOD AND RESTAURANTS). 'HANG OUT' PLACE FOR MILLENIALS, FOODS AND MUST VISIT
-                    DESTINATIONS FOR TOURISTS/BALIKBAYANS.</p>
+            <div class="col m6">
+                <img src="{{ asset('img/about3.jpg') }}" style="width: 50%; position: relative; left: 65%;"/>
+            </div>
 
-                <h4 class="left-align purple-text text-lighten-3"
-                    style="margin-left: 15%; margin-top: 15%; margin-bottom: 15%;">
-                    The biggest night food market in the Philippines which incubates new and unique food concepts.
-                </h4>
-
-                <img src="{{ asset('img/about2.jpg') }}" class="img-responsive"
-                     style="width: 100%; right: 15%; position: relative;"/>
+            <div class="col m6 oratorStd">
+                <div style="position: relative; left: 15%; width: 85%;">
+                    <p style="margin: 0;">
+                        PAMORA FARM
+                    </p>
+                    <p style="margin: 0;">
+                        BAWAI'S
+                    </p>
+                    <p style="margin: 0;">
+                        TOKYO TEMPURA
+                    </p>
+                    <p style="margin: 0;">
+                        SUNRISE BUCKETS
+                    </p>
+                    <p style="margin: 0;">
+                        SHAWARMA BROS
+                    </p>
+                    <p style="margin: 0;">
+                        MERRY MOO
+                    </p>
+                    <p style="margin: 0;">
+                        SPRING
+                    </p>
+                    <p style="margin: 0;">
+                        ANGRY PUFFS
+                    </p>
+                    <p style="margin: 0;">
+                        BAWAI'S
+                    </p>
+                </div>
             </div>
         </div>
+    </div>
 
-        <div class="row">
-            <div class="col s12">
-                <h3 class="center-block center-align">
-                    <i class="red-text text-darken-2">
-                        Mercato has incubated<br>
-                        many succesful food businesses
-                    </i>
-                </h3>
+    <!-- Mobile View-->
+    <div class="hide-on-med-and-up">
 
-                <img src="{{ asset('img/about3.jpg') }}" class="img-responsive left"
-                     style="width: 60%; position: relative; left: 15%;">
-                <div style="position: relative; left: 20%;">
-                    <p>PAMORA FARM</p>
-                    <p>BAWAI'S</p>
-                    <p>TOKYO TEMPURA</p>
-                    <p>SUNRISE BUCKETS</p>
-                    <p>SHAWARMA BROS</p>
-                    <p>MERRY MOO</p>
-                    <p>SPRING</p>
-                    <p>ANGRY PUFFS</p>
-                    <p>HUNGER BUSTER</p>
-                    <p>MANANG'S CHICKEN</p>
-                    <p>RISA</p>
-                </div>
-
-                <div class="clearfix"></div>
-
-                <img src="{{ asset('img/about4.jpg') }}" class="img-responsive left"
-                     style="width: 50%; position: relative; left: 5%; bottom: 128px;">
-                <div style="position: relative; left: 10%; padding-top: 16px;">
-                    <p>MOCHIKO</p>
-                    <p>GINO'S BRICK OVEN PIZZA</p>
-                    <p>GOOD MEAL HUNTING</p>
-                    <p>LOUIE-LUIS ICE CREAM SANDWICH</p>
-                    <p>BAYANI BREW</p>
-                    <p>GAWAD KALINGA</p>
-                    <p>KRISTINA'S PREMIUM INUTAK</p>
-                    <p>MIO GELATI</p>
-                    <p>THEO & PHILO ARTISAN CHOCOLATES</p>
-                    <p>BRASAS LATIN AMERICAN STREET FOOD</p>
-                </div>
-
-            </div>
-        </div>
     </div>
 @stop
 

@@ -18,18 +18,18 @@
 
     <div class="full-page valign-wrapper" style="background: rgba(0, 0, 0, 0.5)">
         <div class="row left-align">
-            <span class="hide-on-med-and-up">
-                <h5 class="white-text">#TARA<span class="yellow-text text-lighten-3">MERCATO</span>TAYO</h5>
-            </span>
+            <duv class="hide-on-med-and-up">
+                <h5 class="white-text didot">#Tara<span class="yellow-text text-lighten-3">Mercato</span>Tayo</h5>
+            </duv>
 
-            <span class="hide-on-small-and-down">
-                <h1 class="white-text">#TARA<span class="yellow-text text-lighten-3">MERCATO</span>TAYO</h1>
-            </span>
+            <div class="hide-on-small-and-down">
+                <p class="white-text didot" style="font-size: 32px; -webkit-transform: scale(4, 4)">#Tara<span style="color: rgba(252,237,199,1)">Mercato</span>Tayo</p>
+            </div>
         </div>
     </div>
 
-    <a href="/about" class="white-text"
-       style="position: fixed; bottom: 32px; right: 32px; border-bottom: 1px solid white;">
+    <a href="/about-us" class="white-text"
+       style="position: fixed; bottom: 24px; right: 32px; border-bottom: 1px solid white;">
         <i>Skip Intro</i>
     </a>
 @stop

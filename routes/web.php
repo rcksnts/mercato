@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('public.landing');
 });
 
-Route::get('/about', function () {
+Route::get('/about-us', function () {
     return view('public.about');
 });
 
