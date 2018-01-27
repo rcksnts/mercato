@@ -95,11 +95,12 @@
             </div>
 
             <div class="col m6">
-                <img src="{{ asset('img/about3.jpg') }}" style="width: 50%; position: relative; left: 65%;"/>
+                <img src="{{ asset('img/about3.jpg') }}" style="width: 50%; position: relative; left: 65%; min-height: 224px;"/>
+                <img src="{{ asset('img/about4.jpg') }}" style="width: 55%; position: relative; left: 25%; bottom: 64px; max-height: 436px; z-index: -1"/>
             </div>
 
             <div class="col m6 oratorStd">
-                <div style="position: relative; left: 15%; width: 85%;">
+                <div style="position: relative; left: 20%; width: 85%;">
                     <p style="margin: 0;">
                         PAMORA FARM
                     </p>
@@ -125,7 +126,46 @@
                         ANGRY PUFFS
                     </p>
                     <p style="margin: 0;">
-                        BAWAI'S
+                        HUNGER BUSTER
+                    </p>
+                    <p style="margin: 0;">
+                        MANANG'S CHICKEN
+                    </p>
+                    <p style="margin: 0;">
+                        RISA
+                    </p>
+                </div>
+
+                <div style="position: relative; left: -15%; top: 16px; width: 85%;">
+                    <p style="margin: 0;">
+                        MOCHIKO
+                    </p>
+                    <p style="margin: 0;">
+                        GINO'S BRICK OVEN PIZZA
+                    </p>
+                    <p style="margin: 0;">
+                        GOOD MEAL HUNTING
+                    </p>
+                    <p style="margin: 0;">
+                        LOUIE-LUIS ICE CREAM SANDWHICH
+                    </p>
+                    <p style="margin: 0;">
+                        BAYANI BREW
+                    </p>
+                    <p style="margin: 0;">
+                        GAWAD KALINGA
+                    </p>
+                    <p style="margin: 0;">
+                        KRISTINA'S PREMIUM INUTAK
+                    </p>
+                    <p style="margin: 0;">
+                        MIO GELATI
+                    </p>
+                    <p style="margin: 0;">
+                        THEO & PHILO ARTISAN CHOCOLATES
+                    </p>
+                    <p style="margin: 0;">
+                        BRASAS LATIN AMERICAN STREET FOOD
                     </p>
                 </div>
             </div>
