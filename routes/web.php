@@ -23,8 +23,12 @@ Route::get('/blog', function () {
     return view('public.blog');
 });
 
-Route::get('/contact-us', function () {
+Route::get('/market', function () {
+    return view('public.market');
+});
 
+Route::get('/contact-us', function () {
+    return view('public.contact');
 });
 
 /* Admin */

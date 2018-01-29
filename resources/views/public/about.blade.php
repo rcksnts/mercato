@@ -6,12 +6,47 @@
 
 @section('header')
     <style type="text/css">
+        .scheduleTasteTestSpacing {
+            letter-spacing: 2px;
+        }
+
         #nav_login {
             color: black;
         }
 
         #nav_signup {
             color: black;
+        }
+
+        input {
+            color: rgba(215, 222, 143, 1) !important;
+            border-bottom: 1px solid rgba(215, 222, 143, 0.5) !important;
+            box-shadow: 0 1px 0 0 rgba(215, 222, 143, 0.5) !important
+        }
+
+        /* label focus color */
+        input:focus + label {
+            color: rgba(215, 222, 143, 1) !important;
+        }
+
+        /* label underline focus color */
+        input:focus {
+            border-bottom: 1px solid rgba(215, 222, 143, 1) !important;
+            box-shadow: 0 1px 0 0 rgba(215, 222, 143, 1) !important
+        }
+
+        .borderBottom75 {
+            position: relative;
+        }
+
+        .borderBottom75:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 25%;
+            height: 100%;
+            width: 50%;
+            border-bottom: 1px solid rgba(215, 222, 143, 1);
         }
     </style>
 @stop
@@ -95,12 +130,14 @@
             </div>
 
             <div class="col m6">
-                <img src="{{ asset('img/about3.jpg') }}" style="width: 50%; position: relative; left: 65%; min-height: 224px;"/>
-                <img src="{{ asset('img/about4.jpg') }}" style="width: 55%; position: relative; left: 25%; bottom: 64px; max-height: 436px; z-index: -1"/>
+                <img src="{{ asset('img/about3.jpg') }}"
+                     style="width: 50%; position: relative; left: 65%; min-height: 224px;"/>
+                <img src="{{ asset('img/about4.jpg') }}"
+                     style="width: 55%; position: relative; left: 25%; bottom: 64px; max-height: 436px; z-index: -1"/>
             </div>
 
             <div class="col m6 oratorStd">
-                <div style="position: relative; left: 20%; width: 85%;">
+                <div style="position: relative; left: 20%; width: 75%;">
                     <p style="margin: 0;">
                         PAMORA FARM
                     </p>
@@ -168,6 +205,97 @@
                         BRASAS LATIN AMERICAN STREET FOOD
                     </p>
                 </div>
+            </div>
+        </div>
+
+        <div id="taste-test" class="row"
+             style="background-image: url('{{ asset('img/about_taste_test.jpg') }}');
+                     background-size: 70%; background-repeat: no-repeat; margin-bottom: 0;">
+
+            <p class="avenir right-align scheduleTasteTestSpacing"
+               style="font-size: 48px;  margin-bottom: 0; line-height: 16px;
+                   position: relative; right: calc(20% + 32px);
+                   color: rgba(86,132,135,1); padding-top: 92px;">
+                <i>Schedule Your Taste Test Now
+                </i>
+            </p>
+
+            <p class="avenir right-align scheduleTasteTestSpacing"
+               style="font-size: 48px;  margin-bottom: 0; line-height: 26px;
+                   position: relative; right: calc(20% + 32px);
+               color: rgba(129,166,172,1);">
+                <i>Schedule Your Taste Test Now
+                </i>
+            </p>
+
+            <p class="avenir right-align scheduleTasteTestSpacing"
+               style="font-size: 48px;  margin-bottom: 0; line-height: 16px;
+                   position: relative; right: calc(20% + 32px);
+               color: rgba(169,187,199,1);">
+                <i>Schedule Your Taste Test Now
+                </i>
+            </p>
+
+            <p style="padding-top: 5%;"></p>
+
+            <div style="width: 70%">
+                <p class="avenir right-align" style="font-size: 26px; margin-top: 0; margin-bottom: 0; line-height: 26px;
+               position: relative; right: 32px;
+               color: rgba(215,222,143, 1);">
+                    <i>Be part of the Mercato Ecosystem today!</i>
+                </p><br>
+
+                <div class="row right avenir" style="margin-right: 32px; margin-bottom: 0;">
+                    <div class="valign-wrapper" style=" width: 100%; height: 32px;">
+                        <p class="left" style="margin-right: 32px; font-size: 16px; margin-top: 0; margin-bottom: 0;
+                        color: rgba(215,222,143, 1);"><i>Merchant Name</i></p>
+
+                        <p class="right">
+                            <input type="text"
+                                   style="font-size: 16px; height: 1.5rem; width: 185px;
+                                margin-bottom: 0; padding-bottom: 0;">
+                        </p>
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+
+                <div class="row right avenir" style="margin-right: 32px; margin-bottom: 0;">
+                    <div class="valign-wrapper" style=" width: 100%; height: 32px;">
+                        <p class="left" style="margin-right: 32px; font-size: 16px; padding-bottom: 0;
+                        color: rgba(215,222,143, 1);"><i>Email Address<i>&nbsp;&nbsp;&nbsp;</p>
+                        <p class="right">
+                            <input type="text"
+                                   style="font-size: 16px; height: 1.5rem; width: 185px;
+                                   margin-bottom: 0; padding-bottom: 0;">
+                        </p>
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+
+                <div class="row right avenir" style="margin-right: 32px; margin-bottom: 0;">
+                    <div class="valign-wrapper" style=" width: 100%; height: 32px;">
+                        <p class="left" style="margin-right: 32px; font-size: 16px; padding-bottom: 0;
+                        color: rgba(215,222,143, 1);"><i>Mobile Number</i></p>
+                        <p class="right">
+                            <input type="text"
+                                   style="font-size: 16px; height: 1.5rem; width: 185px;
+                                   margin-bottom: 0; padding-bottom: 0;">
+                        </p>
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+                <div class="row right" style="margin-right: 32px; margin-top: 16px; margin-bottom: 0;">
+                    <button type="button" class="borderBottom75"
+                            style="border: none; background: none; font-size: 18px; color: rgba(215,222,143, 1); padding-bottom: 2px;">
+                        <i>Submit</i>
+                    </button>
+                </div>
+
+                <div class="clearfix"></div>
+                <br><br>
             </div>
         </div>
     </div>
