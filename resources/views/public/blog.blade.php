@@ -14,48 +14,120 @@
     <p onclick="openNav()" class="oratorStd"
        style="cursor: pointer; position: fixed; bottom: 16px; left: 110px; font-size: 18px;"><b>Menu</b></p>
 
-    <!-- Desktop View -->
-    <div class="hide-on-small-and-down">
-        <div class="row full-page" style="margin-bottom: 0; margin-left: calc(220px + 43.2px);">
-            <div class="full-page"
-                 style="background-image: url({{ asset('img/blog_bg.jpg') }}); background-size: cover; min-height: 100vh;">
+    <div class="row full-page hide-on-med-and-down" style="margin-bottom: 0; margin-left: calc(220px + 43.2px);">
+        <div class="full-page">
+            {{--style="background-image: url({{ asset('img/blog_bg.jpg') }}); background-size: cover;min-height: 100vh; max-width: 1280px;">--}}
+            {{--<div class="container">--}}
+            <br>
+            <div style="margin-top: 128px;"></div>
 
-                <div class="full-page" style="width: 100%; min-height: 100vh;">
-                    <div class="col m12" style="position: fixed; bottom: 20%; margin-left: 5%;">
-                        <h2 class=""><i>Blog</i></h2>
-                        <br>
+            @foreach($blogs as $blog)
+            <!-- Desktop View -->
+                <div class="col s12 m10 offset-m1  hoverable">
+                    <div class="card horizontal  hide-on-med-and-down z-depth-0">
+                        <div class="card-image" style="min-width: 400px;">
+                            <img src="/img_blog/{{ $blog->cover_url }}"
+                                 style="width: 400px !important; height: 300px; !important;"/>
+                        </div>
 
-                        <div style="margin-left: 48px;">
-                            <a href="" class="black-text"><h5 class="" style="max-width: 200px;">Stories</h5></a>
-                            <a href="" class="black-text"><h5 class="" style="max-width: 200px;">Merchant Feature</h5></a>
-                            <a href="" class="black-text"><h5 class="" style="max-width: 200px;">Videos</h5></a>
+                        <div class="card-stacked" style="width: 100%;">
+                            <div class="card-content" style="word-wrap: break-word; width: 100%;">
+                                <a href="/blog/details/{{ $blog->id }}"
+                                   class="futuraMediumBT grey-text text-darken-2 tooltipped"
+                                   style="margin-top: 0; font-size: 32px;"
+                                   data-position="bottom" data-delay="50" data-tooltip="{{ $blog->title }}">
+                                    {{ str_limit($blog->title, $limit = 24, $end = '...') }}
+                                </a>
+
+                                <span class="avenir grey-text text-darken-1" style="position: relative; left: 16px;">
+                                    {!! str_limit($blog->content, $limit = 256, $end = '...') !!}
+                                </span>
+                            </div>
+
+                            <div class="card-action" style="border-top: none;">
+                                <p class="helveticaNeue right">
+                                    {{ Carbon\Carbon::parse($blog->created_at)->format('F j Y h:i A') }}
+                                </p>
+                            </div>
+
                         </div>
                     </div>
                 </div>
+            @endforeach
 
+            <div class="clearfix"></div>
+            <br><br>
+
+            {{--</div>--}}
+
+            <div class="row">
+                <div class="col s12 m10 offset-m1">
+
+                    @if(isset($page))
+                        @if($page < $blog_pages)
+                            <p class="right helveticaNeue">
+                                <a href="/blog/page/{{ $page+1 }}">
+                                    Older Posts
+                                </a>
+                            </p>
+                        @endif
+                    @else
+                        @if($blog_pages > 1)
+                            <p class="right helveticaNeue">
+                                <a href="/blog/page/2">
+                                    Older Posts
+                                </a>
+                            </p>
+                        @endif
+                    @endif
+
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Mobile View -->
-    <div class="hide-on-med-and-up">
-        <div class="row full-page" style="margin-bottom: 0;">
-            <div class="full-page"
-                 style="background-image: url({{ asset('img/blog_bg.jpg') }}); background-size: cover; min-height: 100vh;">
 
-                <div class="full-page" style="width: 100%; background: rgba(0, 0, 0, 0.3); min-height: 100vh;">
-                    <div class="col s12 center-block center-align" style="position: fixed; bottom: 15%;">
-                        <h2 class="grey-text text-lighten-3"><i>Blog</i></h2>
+    <div class="hide-on-large-only">
+        <br>
+        <div style="margin-top: 128px;"></div>
+    </div>
 
-                        <br>
-                        <a href=""><h5 class="grey-text text-lighten-3">Stories</h5></a>
-                        <a href=""><h5 class="grey-text text-lighten-3">Merchant Feature</h5></a>
-                        <a href=""><h5 class="grey-text text-lighten-3">Videos</h5></a>
+    <div class="row">
+    @foreach($blogs as $blog)
+        <!-- Mobile View -->
+            <div class="col s12 m10 offset-m1">
+                <div class="card show-on-medium-and-down hide-on-large-only">
+                    <div class="card-image">
+                        <img src="{{ asset('/img_blog/' . $blog->cover_url) }}">
                     </div>
-                </div>
 
+                    <div class="card-content">
+                        <div class="center-align">
+                            <a href="/blog/details/{{ $blog->id }}"
+                               class="futuraMediumBT grey-text text-darken-2 tooltipped"
+                               style="margin-top: 0; font-size: 32px;"
+                               data-position="bottom" data-delay="50" data-tooltip="{{ $blog->title }}">
+                                {{ str_limit($blog->title, $limit = 24, $end = '...') }}
+                            </a>
+                        </div>
+
+                        <p class="helveticaNeue center-align">
+                            {{ Carbon\Carbon::parse($blog->created_at)->format('F j Y h:i A') }}
+                        </p>
+                        <div class="clearfix"></div>
+                        <div class="divider"></div>
+                        <br>
+
+
+                        <span class="avenir grey-text text-darken-1">
+                            {!! str_limit($blog->content, $limit = 256, $end = '...') !!}
+                        </span>
+                    </div>
+
+                    <div class="clearfix"></div>
+                </div>
             </div>
-        </div>
+        @endforeach
     </div>
 @stop
 
